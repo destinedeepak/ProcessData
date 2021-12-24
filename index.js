@@ -65,7 +65,7 @@ function questionB1() {
     }
     return acc;
   },[])
-  console.log(records,"result");
+
 
   const filename = 'salesDataC.csv';
   
@@ -98,7 +98,6 @@ fs.createReadStream('data/sample.txt')
       let temp =''
       let splittedStringInArray = []
       for (let i = 0; i < string.length; i++) {
-        // console.log(string[i], )
         if(string[i] === '\r' || string[i] === '\n' || string[i] === '.' || string[i] === ',' || string[i] === '?'  || (string[i] !== ' ' && !isNaN(string[i]))){
           continue;
         }
@@ -117,14 +116,14 @@ fs.createReadStream('data/sample.txt')
          }
          return acc
       },{})
-      console.log(wordCount);
+      console.log("Number of times each word occurs:", wordCount);
     })
 }
 
-// questionA1();
-// console.log("List the course code and the duration of the section in days:", questionA2())
-// questionB1()
-// questionC1()
+questionA1();//new file is created as coursesFixed.csv
+console.log("List of course code and the duration of the section in days:", questionA2()); //logged in the terminal
+questionB1();//new file is created as salesDataC.csv
+questionC1(); //logged in the terminal
 
 
 
